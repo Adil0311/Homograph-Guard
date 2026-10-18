@@ -1,0 +1,92 @@
+/* Homograph Guard - Proactive Link Inspection Tooltip Styling */
+.hg-tooltip {
+  position: absolute;
+  z-index: 2147483647;
+  pointer-events: none;
+  width: max-content;
+  max-width: 340px;
+  background: #111827;
+  color: #f9fafb;
+  border: 1px solid #dc2626;
+  border-left: 4px solid #ef4444;
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.hg-tooltip.hg-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hg-tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.hg-tooltip-badge {
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.hg-tooltip-title {
+  font-weight: 700;
+  color: #fca5a5;
+  font-size: 12px;
+}
+
+.hg-tooltip-domain {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  word-break: break-all;
+  margin-bottom: 6px;
+}
+
+.hg-tooltip-findings {
+  color: #d1d5db;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.hg-tooltip-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.hg-tooltip-chip {
+  background: #374151;
+  color: #f87171;
+  border: 1px solid #4b5563;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+}
+
+.hg-tooltip-footer {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid #374151;
+  color: #9ca3af;
+  font-size: 9px;
+  display: flex;
+  justify-content: space-between;
+}

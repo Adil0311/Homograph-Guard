@@ -54,8 +54,12 @@ While browsers serialize these domains using **Punycode** (`xn--...`), everyday 
 
 ## ✨ Key Features
 
-- **Direct Visual Unmasking:** The popup does not merely issue a vague warning; it highlights the exact spoofed character, its Unicode codepoint, and its imitated Latin counterpart (e.g., `а (Cyrillic U+0430) → 'a'`).
+- **Proactive Pre-Click Hover Inspection:** Flags deceptive links in real time as you hover over them across emails (Gmail/Outlook), social feeds (LinkedIn/X), forums, and search results — warning you *before* navigation.
+- **Direct Visual Unmasking:** Highlights the exact spoofed character, its Unicode codepoint, and its imitated Latin counterpart (e.g., `а (Cyrillic U+0430) → 'a'`).
 - **Comprehensive Confusables Coverage (142 Characters, 5 Scripts):** Derived from official [Unicode confusables.txt](https://www.unicode.org/Public/security/latest/confusables.txt) (UTS #39 v18.0.0), covering all 26 Latin letters (a–z) across **Cyrillic, Greek, Armenian, Cherokee, and Georgian**.
+- **Dual-Layer Defense:**
+  1. *Layer 1 (Preventative):* In-page hover tooltip for instant link inspection.
+  2. *Layer 2 (Detective):* Comprehensive active tab popup analysis with risk score meter.
 - **Zero External Dependencies:** Standalone RFC 3492 Punycode decoder and heuristics implemented in pure, readable JavaScript.
 - **Privacy by Design:**
   - 100% client-side local analysis.
@@ -72,6 +76,8 @@ homograph-guard/
 ├── manifest.json         # Chrome extension configuration (Manifest V3)
 ├── punycode.js           # Isolated RFC 3492 Punycode decoder
 ├── detector.js           # Core analysis engine (Mixed-Script & Confusables)
+├── content.js            # Content script for proactive link hover inspection
+├── tooltip.css           # Styling for in-page link warning tooltip
 ├── popup.html            # Extension popup user interface
 ├── popup.css             # Visual risk badges and chip styling
 ├── popup.js              # Tab scanning and UI rendering logic

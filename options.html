@@ -21,6 +21,7 @@
     <li><strong>Punycode Unmasking (RFC 3492):</strong> Translates <code>xn--</code> encoded labels into their underlying Unicode glyphs to inspect hidden characters.</li>
     <li><strong>Mixed-Script Detection (Unicode UTS #39):</strong> Flags labels that interleave Latin letters with characters from foreign scripts (e.g., Cyrillic or Greek) — the primary vector for deceptive homograph phishing.</li>
     <li><strong>Confusables Table (142 characters, 5 scripts):</strong> Maps and visually unmasks lookalike characters (e.g., Cyrillic <code>а</code> imitating Latin <code>a</code>). Directly sourced from official <a href="https://www.unicode.org/Public/security/latest/confusables.txt" target="_blank" rel="noopener">Unicode confusables.txt</a> (UTS #39 v18.0.0), providing full a–z coverage across the 5 primary impersonation scripts: Cyrillic, Greek, Armenian, Cherokee, and Georgian.</li>
+    <li><strong>Proactive Pre-Click Hover Inspection:</strong> Injects a lightweight content script that detects suspicious links on hover, alerting the user via an unobtrusive floating badge before they ever click or navigate.</li>
   </ul>
 
   <h2>Privacy by Design</h2>
