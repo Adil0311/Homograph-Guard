@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Homograph Guard",
+  "version": "1.0.0",
+  "description": "Local real-time detector for IDN Homograph attacks and domain spoofing.",
+  "permissions": ["activeTab", "tabs"],
+  "action": {
+    "default_title": "Analyze domain with Homograph Guard",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}

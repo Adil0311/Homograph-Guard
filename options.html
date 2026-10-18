@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homograph Guard — Architecture & Security Information</title>
+  <style>
+    body { max-width: 760px; margin: 40px auto; padding: 0 20px; font: 16px/1.6 system-ui, sans-serif; color: #172033; }
+    code { background: #f1f4f8; padding: 2px 5px; border-radius: 4px; font-size: 0.9em; }
+    h1 { line-height: 1.2; }
+    h2 { margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <h1>Homograph Guard</h1>
+  <p>Browser extension for client-side real-time detection of <strong>IDN Homograph attacks</strong> and domain spoofing.</p>
+
+  <h2>How the Defense Engine Works</h2>
+  <ul>
+    <li><strong>ASCII Fast Path:</strong> Standard pure ASCII domains are instantly validated at zero risk with zero overhead.</li>
+    <li><strong>Punycode Unmasking (RFC 3492):</strong> Translates <code>xn--</code> encoded labels into their underlying Unicode glyphs to inspect hidden characters.</li>
+    <li><strong>Mixed-Script Detection (Unicode UTS #39):</strong> Flags labels that interleave Latin letters with characters from foreign scripts (e.g., Cyrillic or Greek) — the primary vector for deceptive homograph phishing.</li>
+    <li><strong>Confusables Table (142 characters, 5 scripts):</strong> Maps and visually unmasks lookalike characters (e.g., Cyrillic <code>а</code> imitating Latin <code>a</code>). Directly sourced from official <a href="https://www.unicode.org/Public/security/latest/confusables.txt" target="_blank" rel="noopener">Unicode confusables.txt</a> (UTS #39 v18.0.0), providing full a–z coverage across the 5 primary impersonation scripts: Cyrillic, Greek, Armenian, Cherokee, and Georgian.</li>
+  </ul>
+
+  <h2>Privacy by Design</h2>
+  <ul>
+    <li><strong>100% Local Execution:</strong> Zero network requests, zero remote API calls.</li>
+    <li><strong>Zero Telemetry:</strong> No tracking, no analytics, no persistent history storage.</li>
+    <li>The <code>tabs</code> permission is solely used to read the active tab URL when clicking the popup icon.</li>
+  </ul>
+</body>
+</html>

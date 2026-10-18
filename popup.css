@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+:root {
+  color-scheme: light;
+  --ink: #172033; --muted: #647087; --line: #e0e5ed;
+  --bg: #f5f7fb; --white: #fff; --green: #18794e;
+  --amber: #946200; --red: #b42318; --blue: #2857a4;
+}
+body { margin: 0; width: 370px; background: var(--bg); color: var(--ink);
+  font: 13px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { padding: 16px; }
+header { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; }
+.logo { width: 38px; height: 38px; border-radius: 11px; display: grid;
+  place-items: center; color: white; font-weight: 800; background: #20345f; }
+h1 { font-size: 16px; margin: 0; }
+.subtitle { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+.status, .panel { border: 1px solid var(--line); border-radius: 12px; background: var(--white); }
+.status { padding: 11px 12px; margin-bottom: 10px; border-left: 4px solid #8a94a6; }
+.status strong, .status span { display: block; }
+.status span { margin-top: 3px; color: var(--muted); }
+.status.low { border-left-color: var(--green); }
+.status.medium { border-left-color: #d99a00; }
+.status.high, .status.critical { border-left-color: var(--red); }
+.status.neutral { border-left-color: #8a94a6; }
+.panel { padding: 12px; margin-bottom: 10px; }
+.section-heading { font-weight: 750; margin-bottom: 8px; }
+.domain { overflow-wrap: anywhere; font-size: 15px; font-weight: 750; }
+.muted, .fineprint { color: var(--muted); overflow-wrap: anywhere; }
+.muted { font-size: 11px; margin-top: 4px; }
+.score-line { display: flex; justify-content: space-between; margin-top: 12px; }
+.meter { height: 6px; border-radius: 99px; background: #e9edf4; overflow: hidden; margin-top: 6px; }
+#meterFill { height: 100%; width: 0; background: #718096; transition: width .15s ease; }
+.fineprint { font-size: 10px; margin: 7px 0 0; }
+.findings { margin: 0; padding-left: 18px; }
+.findings li { margin: 5px 0; }
+.characters { display: flex; flex-wrap: wrap; gap: 5px; min-height: 22px; }
+.char-chip { padding: 3px 6px; border-radius: 6px; background: #fff0ef; color: #8b1b13;
+  border: 1px solid #f5c2be; font-family: ui-monospace, monospace; }
+footer { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 10px; }
+button { border: 0; border-radius: 7px; background: #20345f; color: white; padding: 7px 10px; cursor: pointer; font-weight: 650; }
+button:hover { background: #2c477e; }
+.error { color: var(--red); font-size: 12px; }

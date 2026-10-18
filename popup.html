@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homograph Guard</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo">HG</div>
+      <div>
+        <h1>Homograph Guard</h1>
+        <p class="subtitle">Local Domain Analysis</p>
+      </div>
+    </header>
+
+    <section id="status" class="status neutral" aria-live="polite">
+      <strong id="statusTitle">Analyzing…</strong>
+      <span id="statusSummary">Reading active tab domain.</span>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">Analyzed Domain</div>
+      <div id="domain" class="domain">—</div>
+      <div id="asciiDomain" class="muted"></div>
+      <div class="score-line">
+        <span>Risk Score</span>
+        <strong id="score">—</strong>
+      </div>
+      <div class="meter"><div id="meterFill"></div></div>
+      <p class="fineprint">Score is an empirical heuristic indicator, not a compromise probability.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">Findings</div>
+      <ul id="findings" class="findings">
+        <li>Analyzing…</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">Non-ASCII Characters & Lookalikes</div>
+      <div id="characters" class="characters">None detected</div>
+    </section>
+
+    <footer>
+      <span>100% Local · Zero Telemetry</span>
+      <button id="rescan" type="button">Re-scan</button>
+    </footer>
+    <p id="error" class="error" hidden></p>
+  </main>
+  <script src="punycode.js"></script>
+  <script src="detector.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
